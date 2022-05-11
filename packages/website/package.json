@@ -1,5 +1,5 @@
 {
-  "name": "@web-frontend/website",
+  "name": "@wellnite-web-frontend/website",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
