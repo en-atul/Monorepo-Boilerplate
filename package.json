@@ -1,6 +1,47 @@
 {
   "private": true,
-  "name": "example-monorepo",
-  "workspaces": [],
-  "scripts": {}
+  "name": "@wellnite-web-ui/root",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "test": "yarn jest",
+    "lint": "concurrently --kill-others-on-fail --names eslint,stylelint,prettier --prefix-colors \"bgGreen.white.bold,bgBlue.white.bold,bgMagenta.white.bold\" \"yarn lint:scripts\" \"yarn lint:styles\" \"yarn prettier:check\"",
+    "lint:scripts": "eslint --ext .ts,.tsx packages",
+    "lint:styles": "stylelint 'packages/{components,website,admin}/**/*.tsx'",
+    "prettier": "prettier --write '{**/*,*}.{cjs,mjs,ts,tsx,json}'",
+    "prettier:check": "prettier --check '{**/*,*}.{cjs,mjs,ts,tsx,json}'"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "7.16.7",
+    "@stylelint/postcss-css-in-js": "0.38.0",
+    "@testing-library/jest-dom": "5.16.4",
+    "@types/jest": "27.5.0",
+    "@types/testing-library__jest-dom": "5.14.3",
+    "@typescript-eslint/eslint-plugin": "5.23.0",
+    "@typescript-eslint/parser": "5.23.0",
+    "babel-jest": "28.1.0",
+    "concurrently": "7.1.0",
+    "eslint": "8.14.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-babel": "5.3.1",
+    "eslint-plugin-jest-dom": "4.0.1",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "7.29.4",
+    "eslint-plugin-react-hooks": "4.5.0",
+    "husky": "7.0.4",
+    "jest": "27.4.7",
+    "lint-staged": "12.4.1",
+    "postcss-scss": "4.0.4",
+    "prettier": "2.6.2",
+    "stylelint": "14.8.0",
+    "stylelint-config-standard": "25.0.0",
+    "stylelint-config-styled-components": "0.1.1",
+    "stylelint-processor-styled-components": "1.10.0",
+    "ts-jest": "27.1.3",
+    "ts-node": "10.7.0"
+  }
 }

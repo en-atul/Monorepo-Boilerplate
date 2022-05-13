@@ -1,0 +1,8 @@
+.vscode/
+.idea/
+
+# testing
+/coverage
+
+**/build/
+**/node_modules
