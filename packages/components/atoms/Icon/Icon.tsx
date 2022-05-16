@@ -1,17 +1,16 @@
-import React from "react";
+import React, { FC } from "react";
 import VisuallyHidden from "../VisuallyHidden ";
 
-const Icon = ({ type, children }) => {
+type Props = {
+  type: string;
+  children?: React.ReactNode;
+};
+const Icon: FC<Props> = ({ type, children }) => {
+  console.log(type);
   return (
     <>
       {/* select svg using type prop from obj */}
-      <svg
-        className="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path
           stroke-linecap="round"
           stroke-linejoin="round"
