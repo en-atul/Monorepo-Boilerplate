@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    // Basic Options
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "noEmit": true,
+    "importHelpers": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    // Strict Type Checking Options
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "strictBindCallApply": true,
+    // Additional Checks
+    // Having this be an error masks type errors when defining a function. It's set as a warning in eslint.
+    "noUnusedLocals": false,
+    // Warn when encountering unused paramenters
+    // "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    // Module Resolution Options
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    // Experimental Options
+    "downlevelIteration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@wellnite-web-ui/core/*": ["./packages/core/*"],
+      "@wellnite-web-ui/components/*": ["./packages/shared/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

@@ -1,5 +1,5 @@
 {
-  "name": "@wellnite-web-frontend/template",
+  "name": "@wellnite-web-ui/template",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT"
