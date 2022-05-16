@@ -51,14 +51,19 @@ export const OptionalIcon: FC<IconProps> = ({
   }
   return children;
 };
-<OptionalIcon>
-  <button>hello</button>
-</OptionalIcon>;
-/* export const Button: FC<Props> = ({}) => {
+
+type ButtonProps = {
+  onClick?: () => void;
+  disabled?: boolean;
+  ref?: React.Ref<HTMLButtonElement>;
+};
+
+export const Button: FC<ButtonProps> = ({ disabled = false, onClick, ref }) => {
   return (
-    <button>
-      <span></span>
-    </button>
+    <OptionalIcon>
+      <button ref={ref} onClick={onClick} disabled={disabled}>
+        hello
+      </button>
+    </OptionalIcon>
   );
 };
- */
