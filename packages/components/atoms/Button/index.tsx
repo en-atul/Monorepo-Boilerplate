@@ -50,51 +50,68 @@ const OptionalIcon = ({ iconPosition, iconOnly, iconType, children }: IconProps)
 
 type ButtonProps = {
   onClick?: () => void;
-  disabled?: boolean;
+  isDisabled?: boolean;
   ref?: React.Ref<HTMLButtonElement>;
-  className?: string;
-  fontSize?: "xs" | "sm" | "lg";
-  borderRadius?: "none" | "lg" | "full";
-  borderWidth?: string;
-  borderColor?: string;
-  bgColor?: string;
+  backgroundgColor?: string;
   textColor?: string;
+  variant: "oval" | "rectangular";
+  size: "medium" | "small" | "large";
+  backgroundColor: "transparent";
+  shadow: boolean;
   type?: "button" | "submit";
   form?: string;
+  iconOnly?: boolean;
+  iconType?: string;
+  iconPosition?: "left" | "right";
+};
+
+const btnSize = {
+  small: `px-4 py-1.5 text-xs`,
+  medium: `px-5 py-2 text-sm`,
+  large: `px-7 py-2.5 text-base`
+};
+
+const btnVariant = {
+  oval: `rounded-sm`,
+  rectangular: "rounded-none"
 };
 
 export const Button: FC<ButtonProps> = ({
-  disabled = false,
   onClick,
   ref,
-  borderRadius = "lg",
-  bgColor = "bg-primary",
-  className,
-  fontSize = "sm",
+  backgroundColor = "primary",
   textColor = "white",
-  borderWidth = "border",
-  borderColor = "white",
+  variant = "oval",
+  size = "medium",
+  shadow = true,
+  isDisabled = false,
   type = "button",
-  form
+  form,
+  iconOnly = false,
+  iconType,
+  iconPosition
 }) => {
+  const shadows = shadow ? "shadow-lg" : "";
+  const disabled = isDisabled ? "disabled" : "";
+
   return (
-    <OptionalIcon>
+    <OptionalIcon iconOnly={iconOnly} iconType={iconType} iconPosition={iconPosition}>
       <button
         type={type}
         form={form}
-        className={classnames(
-          `${className} leading-snug rounded-${borderRadius} ${
-            disabled ? "bg-gray-500" : bgColor
-          } text-${fontSize} text-${textColor} ${borderWidth} border-${disabled ? "gray-500" : borderColor}`,
-          {
-            "pointer-events-none": disabled
-          }
-        )}
+        className={[
+          `${btnSize[size]}`,
+          `${btnVariant[variant]}`,
+          `bg-${backgroundColor}`,
+          `text-${textColor}`,
+          `${shadows}`,
+          `${disabled}`
+        ].join(" ")}
         ref={ref}
         onClick={onClick}
-        disabled={disabled}
+        disabled={isDisabled}
       >
-        hello
+        Book a Appointment
       </button>
     </OptionalIcon>
   );
