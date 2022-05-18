@@ -42,4 +42,5 @@ export type ButtonProps = {
   iconOnly?: boolean;
   iconType?: string;
   iconPosition?: IconPosition;
+  isSubmitting?:boolean
 };

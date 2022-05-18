@@ -1,5 +1,6 @@
 import React, { FC, Fragment } from "react";
 import classnames from "classnames";
+import { Oval } from "react-loader-spinner";
 import Icon from "../Icon/Icon";
 import { ButtonCorner, ButtonProps, ButtonSize, ButtonVariant, IconProps } from "./Button.types";
 
@@ -73,11 +74,12 @@ export const Button: FC<ButtonProps> = ({
   form,
   iconOnly = false,
   iconType,
-  iconPosition
+  iconPosition,
+  isSubmitting
 }) => {
   const shadows = shadow ? "shadow-lg" : "";
   const disabled = isDisabled ? "bg-gray-400 text-gray-50 cursor-not-allowed no-underline shadow-lg" : "";
-
+  const submitting = isSubmitting ? "flex items-center justify-center bg-gray-400 text-gray-50 cursor-not-allowed" : "";
   return (
     <OptionalIcon iconOnly={iconOnly} iconType={iconType} iconPosition={iconPosition}>
       <button
@@ -88,13 +90,24 @@ export const Button: FC<ButtonProps> = ({
           `${btnVariant[variant]}`,
           `${btnCorner[corner]}`,
           `${shadows}`,
-          `${disabled}`
+          `${disabled}`,
+          `${submitting}`
         ].join(" ")}
         ref={ref}
         onClick={onClick}
         disabled={isDisabled}
       >
         Book a Appointment
+        {isSubmitting ? (
+          <Oval
+            strokeWidth={5}
+            width={15}
+            height={15}
+            wrapperClass="ml-1"
+            color="#fff"
+            secondaryColor="text-blue-400"
+          />
+        ) : null}
       </button>
     </OptionalIcon>
   );
