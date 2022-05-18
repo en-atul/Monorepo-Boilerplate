@@ -10,10 +10,16 @@ export enum ButtonCorner {
   Round = "round",
   Rectangular = "rectangular"
 }
+
 export enum ButtonSize {
   Small = "small",
   Medium = "medium",
   Large = "large"
+}
+
+export enum IconPosition {
+  Left = "left",
+  Right = "right"
 }
 
 export type IconProps = {
@@ -22,11 +28,6 @@ export type IconProps = {
   iconType?: string;
   children: any;
 };
-
-export enum IconPosition {
-  Left = "left",
-  Right = "right"
-}
 
 export type ButtonProps = {
   onClick?: () => void;
