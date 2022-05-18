@@ -76,7 +76,7 @@ export const Button: FC<ButtonProps> = ({
   iconPosition
 }) => {
   const shadows = shadow ? "shadow-lg" : "";
-  const disabled = isDisabled ? "bg-gray-400 text-gray-50 cursor-not-allowed" : "";
+  const disabled = isDisabled ? "bg-gray-400 text-gray-50 cursor-not-allowed no-underline shadow-lg" : "";
 
   return (
     <OptionalIcon iconOnly={iconOnly} iconType={iconType} iconPosition={iconPosition}>
