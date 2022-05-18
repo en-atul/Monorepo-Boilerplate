@@ -1,6 +1,7 @@
 import React, { FC, Fragment } from "react";
 import classnames from "classnames";
 import Icon from "../Icon/Icon";
+import { ButtonCorner, ButtonProps, ButtonSize, ButtonVariant, IconProps } from "./Button.types";
 
 /* 
 Create enum for button with  - content/full 
@@ -8,11 +9,23 @@ Create enum for IconPosition
 add props for onClick, disabled, ref.
  */
 
-type IconProps = {
-  iconPosition?: string;
-  iconOnly?: boolean;
-  iconType?: string;
-  children: any;
+const btnSize = {
+  small: `px-4 py-1.5 text-xs`,
+  medium: `px-5 py-2 text-sm`,
+  large: `px-7 py-2.5 text-base`
+};
+
+const btnCorner = {
+  round: `rounded-lg`,
+  rectangular: "rounded-none"
+};
+
+const btnVariant = {
+  primary: "bg-primary text-white",
+  danger: "bg-red-500 text-white",
+  success: "bg-green-600 text-white",
+  warning: "bg-yellow-500 text-black",
+  link: "bg-transparent text-primary underline"
 };
 
 const IconWrapper: FC<IconProps> = ({ iconPosition, iconOnly, iconType, children }) => {
@@ -48,41 +61,12 @@ const OptionalIcon = ({ iconPosition, iconOnly, iconType, children }: IconProps)
   return children;
 };
 
-type ButtonProps = {
-  onClick?: () => void;
-  isDisabled?: boolean;
-  ref?: React.Ref<HTMLButtonElement>;
-  backgroundgColor?: string;
-  textColor?: string;
-  variant: "oval" | "rectangular";
-  size: "medium" | "small" | "large";
-  backgroundColor: "transparent";
-  shadow: boolean;
-  type?: "button" | "submit";
-  form?: string;
-  iconOnly?: boolean;
-  iconType?: string;
-  iconPosition?: "left" | "right";
-};
-
-const btnSize = {
-  small: `px-4 py-1.5 text-xs`,
-  medium: `px-5 py-2 text-sm`,
-  large: `px-7 py-2.5 text-base`
-};
-
-const btnVariant = {
-  oval: `rounded-sm`,
-  rectangular: "rounded-none"
-};
-
 export const Button: FC<ButtonProps> = ({
   onClick,
   ref,
-  backgroundColor = "primary",
-  textColor = "white",
-  variant = "oval",
-  size = "medium",
+  corner = ButtonCorner.Round,
+  variant = ButtonVariant.Primary,
+  size = ButtonSize.Large,
   shadow = true,
   isDisabled = false,
   type = "button",
@@ -92,7 +76,7 @@ export const Button: FC<ButtonProps> = ({
   iconPosition
 }) => {
   const shadows = shadow ? "shadow-lg" : "";
-  const disabled = isDisabled ? "disabled" : "";
+  const disabled = isDisabled ? "bg-gray-400 text-gray-50 cursor-not-allowed" : "";
 
   return (
     <OptionalIcon iconOnly={iconOnly} iconType={iconType} iconPosition={iconPosition}>
@@ -102,8 +86,7 @@ export const Button: FC<ButtonProps> = ({
         className={[
           `${btnSize[size]}`,
           `${btnVariant[variant]}`,
-          `bg-${backgroundColor}`,
-          `text-${textColor}`,
+          `${btnCorner[corner]}`,
           `${shadows}`,
           `${disabled}`
         ].join(" ")}
