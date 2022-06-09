@@ -3,7 +3,7 @@
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext", "WebWorker", "WebWorker.ImportScripts"],
     "baseUrl": "src",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "sourceMap": true,
     "resolveJsonModule": true,
     "composite": true,

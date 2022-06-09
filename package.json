@@ -1,8 +1,9 @@
 {
   "private": true,
-  "name": "example-monorepo",
+  "name": "root",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "libs/style"
   ],
   "eslintConfig": {
     "overrides": [
@@ -29,7 +30,7 @@
     "test": "yarn jest",
     "lint": "concurrently --kill-others-on-fail --names eslint,stylelint,prettier --prefix-colors \"bgGreen.white.bold,bgBlue.white.bold,bgMagenta.white.bold\" \"yarn lint:scripts\" \"yarn lint:styles\" \"yarn prettier:check\"",
     "lint:scripts": "eslint --ext .ts,.tsx packages",
-    "lint:styles": "stylelint 'packages/{components,website,admin}/**/*.tsx'",
+    "lint:styles": "stylelint 'packages/{components,partner,vendor}/**/*.tsx'",
     "prettier": "prettier --write '{**/*,*}.{cjs,mjs,ts,tsx,json}'",
     "prettier:check": "prettier --check '{**/*,*}.{cjs,mjs,ts,tsx,json}'",
     "storybook": "start-storybook -p 6006",
@@ -58,14 +59,15 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-babel": "5.3.1",
     "eslint-plugin-jest-dom": "4.0.1",
-    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "7.29.4",
     "eslint-plugin-react-hooks": "4.5.0",
     "husky": "7.0.4",
     "jest": "27.4.7",
+    "lerna": "^5.1.0",
     "lint-staged": "12.4.1",
-    "postcss-scss": "^4.0.4",
-    "prettier": "2.6.2",
+    "postcss-scss": "4.0.4",
+    "prettier": "^2.6.2",
     "stylelint": "14.8.0",
     "stylelint-config-standard": "25.0.0",
     "stylelint-config-styled-components": "0.1.1",

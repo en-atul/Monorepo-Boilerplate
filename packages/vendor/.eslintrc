@@ -1,0 +1,45 @@
+{
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2019,
+    "sourceType": "module"
+  },
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/eslint-recommended", "../../.eslintrc.json"],
+  "plugins": ["react-hooks", "babel"],
+  "rules": {
+    "import/named": "off",
+    "import/prefer-default-export": "off",
+    "jsx-a11y/label-has-for": "off",
+    "react/prop-types": "off",
+    "import/no-unassigned-import": "off",
+    "babel/no-invalid-this": 0,
+    "babel/camelcase": 0,
+    "babel/new-cap": 0,
+    "no-console": "off",
+    "jsx-a11y/accessible-emoji": "off",
+    "consistent-return": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ]
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}

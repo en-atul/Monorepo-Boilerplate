@@ -2,7 +2,7 @@ import React, { FC, Fragment } from "react";
 import classnames from "classnames";
 import { Oval } from "react-loader-spinner";
 import Icon from "../Icon/Icon";
-import { ButtonCorner, ButtonProps, ButtonSize, ButtonVariant, IconProps } from "./Button.types";
+import { ButtonCorner, ButtonProps, ButtonSize, ButtonVariant, IconProps } from "../../interfaces";
 
 /* 
 Create enum for button with  - content/full 
@@ -75,8 +75,10 @@ export const Button: FC<ButtonProps> = ({
   iconOnly = false,
   iconType,
   iconPosition,
-  isSubmitting
+  isSubmitting,
+  children
 }) => {
+  console.log("....variant", variant);
   const shadows = shadow ? "shadow-lg" : "";
   const disabled = isDisabled ? "bg-gray-400 text-gray-50 cursor-not-allowed no-underline shadow-lg" : "";
   const submitting = isSubmitting ? "flex items-center justify-center bg-gray-400 text-gray-50 cursor-not-allowed" : "";
@@ -97,7 +99,7 @@ export const Button: FC<ButtonProps> = ({
         onClick={onClick}
         disabled={isDisabled}
       >
-        Book a Appointment
+        {children}
         {isSubmitting ? (
           <Oval
             strokeWidth={5}

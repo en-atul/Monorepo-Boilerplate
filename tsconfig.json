@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     // Basic Options
     "target": "es5",
     "module": "commonjs",
@@ -33,8 +34,8 @@
     "downlevelIteration": true,
     "baseUrl": ".",
     "paths": {
-      "@wellnite-web-ui/core/*": ["./packages/core/*"],
-      "@wellnite-web-ui/components/*": ["./packages/shared/*"]
+      "@channlworks/core/*": ["./packages/core/*"],
+      "@channlworks/components/*": ["./packages/shared/*"]
     }
   },
   "exclude": ["node_modules"]
