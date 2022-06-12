@@ -1,4 +1,4 @@
-import "../libs/style/style.css"
+import "../libs/styles/index.css"
 
 
 export const parameters = {
