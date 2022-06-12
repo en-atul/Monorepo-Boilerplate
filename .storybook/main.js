@@ -6,12 +6,10 @@ module.exports = {
       options: {
         postcssLoaderOptions: {
           implementation: require("postcss")
-        }
-        // cssLoaderOptions: {
-        //   // When you have splitted your css over multiple files
-        //   // and use @import('./other-styles.css')
-        //   importLoaders: 1,
-        // },
+        },
+        cssLoaderOptions: {
+          importLoaders: 1,
+        },
       }
     },
     "@storybook/addon-links",

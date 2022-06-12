@@ -7,7 +7,7 @@
     "ecmaVersion": 2019,
     "sourceType": "module"
   },
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/eslint-recommended", "../../.eslintrc.json"],
+  "extends": ["../../.eslintrc.json"],
   "plugins": ["react-hooks", "babel"],
   "rules": {
     "import/named": "off",

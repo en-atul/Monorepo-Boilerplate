@@ -35,7 +35,7 @@
     "baseUrl": ".",
     "paths": {
       "@channlworks/core/*": ["./packages/core/*"],
-      "@channlworks/components/*": ["./packages/shared/*"]
+      "@channlworks/components/*": ["./packages/components/*"]
     }
   },
   "exclude": ["node_modules"]
