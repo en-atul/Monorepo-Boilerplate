@@ -34,8 +34,8 @@
     "downlevelIteration": true,
     "baseUrl": ".",
     "paths": {
-      "@channlworks/core/*": ["./packages/core/*"],
-      "@channlworks/components/*": ["./packages/components/*"]
+      "@monorepo/core/*": ["./packages/core/*"],
+      "@monorepo/components/*": ["./packages/components/*"]
     }
   },
   "exclude": ["node_modules"]
