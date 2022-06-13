@@ -3,7 +3,7 @@ import { Button, ButtonVariant } from "@channlworks/components";
 
 function App() {
   return (
-    <div className="bg-gray-400">
+    <div className="px-8">
       <Button variant={ButtonVariant.Warning}>hello Kate</Button>
       <Button variant={ButtonVariant.Danger}>hello Kate</Button>
       <Button variant={ButtonVariant.Success}>hello Kate</Button>
