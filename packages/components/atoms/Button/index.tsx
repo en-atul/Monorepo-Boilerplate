@@ -94,12 +94,14 @@ export const Button: FC<ButtonProps> = ({
           `${shadows}`,
           `${disabled}`,
           `${submitting}`
-        ].join(" ")}
+        ]
+          .join(" ")
+          .trim()}
         ref={ref}
         onClick={onClick}
         disabled={isDisabled}
       >
-        {children} jhk
+        {children}
         {isSubmitting ? (
           <Oval
             strokeWidth={5}

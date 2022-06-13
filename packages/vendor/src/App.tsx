@@ -4,8 +4,12 @@ import { Button, ButtonVariant } from "@channlworks/components";
 function App() {
   return (
     <div>
-      <p className="bg-green-400">hcgjv</p>
-      <Button variant={ButtonVariant.Danger}>hello</Button>
+      <Button variant={ButtonVariant.Warning}>hello Kate</Button>
+      <Button variant={ButtonVariant.Danger}>hello Kate</Button>
+      <Button variant={ButtonVariant.Success}>hello Kate</Button>
+      <Button variant={ButtonVariant.Primary}>hello Kate</Button>
+
+      {/* <button className="px-7 py-2.5 text-base bg-red-500 text-white rounded-lg shadow-lg">hello</button> */}
     </div>
   );
 }

@@ -15,9 +15,9 @@ module.exports = {
       return webpackConfig;
     }
   },
-  style: {
-    postOptions: {
-      plugins: [require("tailwindcss"), require("autoprefixer")]
-    }
-  }
+  // style: {
+  //   postOptions: {
+  //     plugins: [require("tailwindcss"), require("autoprefixer")]
+  //   }
+  // }
 };

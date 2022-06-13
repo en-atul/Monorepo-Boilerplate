@@ -8,7 +8,7 @@
     "sourceType": "module"
   },
   "extends": ["../../.eslintrc.json"],
-  "plugins": ["react-hooks", "babel"],
+  "plugins": ["babel"],
   "rules": {
     "import/named": "off",
     "import/prefer-default-export": "off",
