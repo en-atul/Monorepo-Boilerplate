@@ -1,5 +1,4 @@
 import * as storybook from "storybook";
-
 storybook.setAddon();
 
 const req = require.context(

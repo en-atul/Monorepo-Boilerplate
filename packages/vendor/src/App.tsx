@@ -3,13 +3,12 @@ import { Button, ButtonVariant } from "@channlworks/components";
 
 function App() {
   return (
-    <div>
+    <div className="bg-gray-400">
       <Button variant={ButtonVariant.Warning}>hello Kate</Button>
       <Button variant={ButtonVariant.Danger}>hello Kate</Button>
       <Button variant={ButtonVariant.Success}>hello Kate</Button>
       <Button variant={ButtonVariant.Primary}>hello Kate</Button>
-
-      {/* <button className="px-7 py-2.5 text-base bg-red-500 text-white rounded-lg shadow-lg">hello</button> */}
+      <Button variant={ButtonVariant.Link}>hello Kate</Button>
     </div>
   );
 }
